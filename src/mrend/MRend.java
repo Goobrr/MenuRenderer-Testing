@@ -1,17 +1,14 @@
-package example;
+package mrend;
 
 import arc.*;
 import arc.util.*;
-import mindustry.*;
-import mindustry.content.*;
 import mindustry.game.EventType.*;
-import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 
-public class ExampleJavaMod extends Mod{
+public class MRend extends Mod{
 
-    public ExampleJavaMod(){
+    public MRend(){
         Log.info("Loaded ExampleJavaMod constructor.");
 
         //listen for game load event
