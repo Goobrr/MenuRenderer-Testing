@@ -22,14 +22,7 @@ public class MRend extends Mod{
                 Log.err("Failed to replace menu renderer", ex);
             }
 
-            try{
-                Field bloom = Vars.renderer.getClass().getDeclaredField("bloom");
-                bloom.setAccessible(true);
-
-                bloom.set(Vars.renderer, new CustomBloom(true));
-            }catch(Exception ex){
-                Log.err("Failed to replace bloom", ex);
-            }
+            Vars.renderer.bloom = new CustomBloom(true);
         });
     }
 }
