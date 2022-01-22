@@ -1,6 +1,7 @@
 package mrend;
 
 import arc.*;
+import arc.assets.loaders.*;
 import arc.util.*;
 import mindustry.*;
 import mindustry.game.EventType.*;
@@ -19,6 +20,15 @@ public class MRend extends Mod{
                 renderer.set(Vars.ui.menufrag, new CustomRenderer());
             }catch(Exception ex){
                 Log.err("Failed to replace menu renderer", ex);
+            }
+
+            try{
+                Field bloom = Vars.renderer.getClass().getDeclaredField("bloom");
+                bloom.setAccessible(true);
+
+                bloom.set(Vars.renderer, new CustomBloom(true));
+            }catch(Exception ex){
+                Log.err("Failed to replace bloom", ex);
             }
         });
     }
